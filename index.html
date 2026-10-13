@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game of Life — Conway's Cellular Automaton</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🧬 <span class="gold">Game of Life</span></h1>
+    <p class="sub">Conway's famous zero-player game — draw cells, press play, and watch life emerge.</p>
+  </header>
+
+  <main>
+    <!-- The canvas where the simulation renders -->
+    <canvas id="grid" width="600" height="600"></canvas>
+
+    <div class="panel">
+      <div class="controls">
+        <button id="playBtn">▶ Play</button>
+        <button id="stepBtn">⏭ Step</button>
+        <button id="randomBtn">🎲 Random</button>
+        <button id="clearBtn">🧹 Clear</button>
+      </div>
+
+      <div class="slider-row">
+        <label for="speed">Speed</label>
+        <!-- delay per generation in ms -->
+        <input type="range" id="speed" min="30" max="600" value="150">
+      </div>
+
+      <div class="preset-row">
+        <span>Famous patterns:</span>
+        <button class="preset" data-pattern="glider">Glider</button>
+        <button class="preset" data-pattern="pulsar">Pulsar</button>
+        <button class="preset" data-pattern="gosper">Gosper Gun</button>
+      </div>
+
+      <div class="stats">
+        Generation <strong id="gen">0</strong> · Population <strong id="pop">0</strong>
+      </div>
+
+      <p class="hint">💡 Tip: draw on the grid with your mouse (or finger) while paused.</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
